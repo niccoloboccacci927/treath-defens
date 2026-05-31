@@ -8,6 +8,19 @@ const {
   AuditLogEvent
 } = require("discord.js");
 
+const express = require("express");
+
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("Online");
+});
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server online sulla porta ${PORT}`);
+});
 // ======================================================
 // 🛡️ THREAT GUARD - BOT 1
 // Real-Time Protection System
